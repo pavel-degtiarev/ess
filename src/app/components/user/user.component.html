@@ -1,0 +1,44 @@
+<form
+  class="user list-row"
+  [formGroup]="formService.form"
+  *ngIf="ownStateIsLocked; else userView"
+>
+  <input class="list-row__item form__item field__first-name" appNoSpaces
+    formControlName="firstName" type="text" placeholder="First name"
+  />
+  <input class="list-row__item form__item field__last-name" appNoSpaces
+    formControlName="lastName" type="text" placeholder="Last name"
+  />
+  <input class="list-row__item form__item field__email" appNoSpaces
+    formControlName="email" type="email" placeholder="Email"
+  />
+  <input class="list-row__item form__item field__age"
+    formControlName="age" type="number"
+  />
+  <select class="list-row__item form__item field__gender"
+  formControlName="gender"
+  >
+    <option value="male" selected>male</option>
+    <option value="female">female</option>
+  </select>
+</form>
+
+<ng-template #userView>
+  <div
+    class="user list-row"
+    [appOnHover]="onHover"
+  >
+    <p class="list-row__item field__first-name">{{ user.firstName | titlecase }}</p>
+    <p class="list-row__item field__last-name">{{ user.lastName | titlecase }}</p>
+    <p class="list-row__item field__email">{{ user.email }}</p>
+    <p class="list-row__item field__age">{{ user.age | number:"1.0-1" }}</p>
+    <p class="list-row__item field__gender">{{ user.gender }}</p>
+  </div>
+</ng-template>
+
+<div
+  class="user__controls"
+  [appOnHover]="onHover"
+>
+  <app-controls [state]="state" [handlers]="handlers"></app-controls>
+</div>

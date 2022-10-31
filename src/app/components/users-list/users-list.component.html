@@ -1,0 +1,15 @@
+<app-informer *ngIf="informerService.message; else usersList"></app-informer>
+
+<ng-template #usersList>
+  <ul class="users__list users-list">
+    <li class="users-list__item users-list__header">
+      <app-header></app-header>
+    </li>
+
+    <li class="users-list__item" *ngFor="let user of usersService.users">
+      <app-user [user]="user"></app-user>
+    </li>
+  </ul>
+
+  <app-button-create></app-button-create>
+</ng-template>

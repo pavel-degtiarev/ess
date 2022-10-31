@@ -1,0 +1,35 @@
+@use "../../../styles/variables.scss" as var;
+@use "../../../styles/text.styles.scss" as typo;
+
+.api-key__field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var.$sizeHalf;
+}
+
+.api-key__input {
+  flex-grow: 1;
+  height: 30px;
+  font-size: typo.$textNorm;
+  border: none;
+  background-color: var.$colorGray;
+}
+
+.api-key__button {
+  border: none;
+  height: var.$sizeNorm;
+  padding: 0 var.$sizeNorm;
+  border-radius: var.$sizeHalf;
+  background-color: var.$colorMain;
+  color: #FFF;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var.$colorMainDark;
+  }
+
+  &:disabled {
+    background-color: var.$colorGrayDark;
+  }
+}

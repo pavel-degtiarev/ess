@@ -1,0 +1,16 @@
+<div class="api-key__field">
+  <label class="api-key__label" for="apiKeyField">API Key</label>
+  <input
+    class="api-key__input"
+    id="apiKeyField"
+    type="text"
+    [(ngModel)]="apiKeyField"
+  />
+  <button
+    class="api-key__button"
+    (click)="saveNewApiKey()"
+    [disabled]="lockService.isLocked"
+  >
+    Save
+  </button>
+</div>

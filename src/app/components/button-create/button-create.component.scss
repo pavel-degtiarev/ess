@@ -1,0 +1,35 @@
+@use "../../../styles/variables.scss" as var;
+@use "../../../styles/text.styles.scss" as typo;
+
+.users__create {
+  position: fixed;
+  width: var.$sizeQuad;
+  height: var.$sizeQuad;
+  padding: 0;
+
+  bottom: var.$sizeNorm;
+  right: var.$sizeNorm;
+
+  color: #FFF;
+  font-size: typo.$textBig;
+  font-weight: typo.$fontRegular;
+
+  background-color: var.$colorMain;
+  border-radius: var.$sizeDouble;
+  border: none;
+
+  background-image: url(../../../assets/user-plus-solid.svg);
+  background-position: center;
+  background-size: var.$sizeNorm;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var.$colorMainDark;
+  }
+
+  &:disabled {
+    background-color: var.$colorGrayDark;
+  }
+}

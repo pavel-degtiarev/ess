@@ -1,0 +1,53 @@
+@use "../../../styles/variables.scss" as var;
+
+.users-list {
+  list-style: none;
+}
+
+.users-list__header {
+  position: sticky;
+  top: 0;
+}
+
+.users-list__item {
+  display: block;
+  position: relative;
+  background-color: #FFF;
+  border-bottom: 1px solid #cccccc;
+}
+
+.list-row {
+  display: flex;
+  flex-direction: row;
+  gap: var.$sizeTiny;
+  padding: 10px 0;
+}
+
+.list-row__item {
+  height: var.$sizeNorm;
+  line-height: var.$sizeNorm;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field__first-name {
+  flex-basis: 25%;
+}
+
+.field__last-name {
+  flex-basis: 25%;
+}
+
+.field__email {
+  flex-basis: 30%;
+}
+
+.field__age {
+  flex-basis: 10%;
+}
+
+.field__gender {
+  flex-basis: 10%;
+}

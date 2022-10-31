@@ -1,0 +1,12 @@
+@use "../styles/variables.scss" as var;
+
+.container {
+  width: 60vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: var.$sizeDouble;
+
+  &:last-child {
+    padding-bottom: var.$sizeDouble;
+  }
+}

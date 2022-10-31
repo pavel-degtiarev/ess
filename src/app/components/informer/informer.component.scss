@@ -1,0 +1,10 @@
+@use "../../../styles/text.styles.scss" as typo;
+
+.informer {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: typo.$textHuge;
+}

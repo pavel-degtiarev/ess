@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+@use "../node_modules/reseter.css/css/reseter.min.css";
+@use "./styles/text.styles.scss" as typo;
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  font-weight: typo.$fontRegular;
+  font-size: typo.$textNorm;
+}

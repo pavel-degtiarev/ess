@@ -1,0 +1,27 @@
+@use "../../../styles/variables.scss" as var;
+@use "../../../styles/text.styles.scss" as typo;
+
+.user__controls {
+  position: absolute;
+  padding-left: var.$sizeTiny;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  width: max-content;
+
+  display: flex;
+  align-items: center;
+
+  line-height: 0;
+}
+
+.form__item {
+  height: 30px;
+  font-size: typo.$textNorm;
+  border: none;
+  background-color: var.$colorGray;
+
+  &.ng-invalid.ng-touched {
+    background-color: var.$colorDangerLight;
+  }
+}

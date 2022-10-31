@@ -1,0 +1,52 @@
+@use "../../../styles/variables.scss" as var;
+
+.button {
+  width: var.$sizeNorm;
+  height: var.$sizeNorm;
+  border-radius: var.$sizeNorm;
+  border: none;
+
+  padding: 0;
+
+  background-position: center;
+  background-size: var.$sizeTiny;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.button__save {
+  background-color: var.$colorSafe;
+  background-image: url(../../../assets/check-solid.svg);
+
+  &:hover {
+    background-color: var.$colorSafeDark;
+  }
+}
+
+.button__edit {
+  background-color: var.$colorMain;
+  background-image: url(../../../assets/pen-solid.svg);
+
+  &:hover {
+    background-color: var.$colorMainDark;
+  }
+}
+
+.button__delete {
+  background-color: var.$colorDanger;
+  background-image: url(../../../assets/trash-solid.svg);
+
+  &:hover {
+    background-color: var.$colorDangerDark;
+  }
+}
+
+.button__cancel {
+  background-color: var.$colorWarn;
+  background-image: url(../../../assets/xmark-solid.svg);
+
+  &:hover {
+    background-color: var.$colorWarnDark;
+  }
+}
