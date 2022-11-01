@@ -15,7 +15,7 @@ const API_KEY_MISSING_MSG = 'API-Key is missing.';
 @Injectable()
 export class ApiService implements IApi {
 
-  needsReload: Subject<void>;
+  // needsReload: Subject<void>;
 
   constructor(
     private http: HttpClient,
@@ -23,18 +23,10 @@ export class ApiService implements IApi {
     private storageService: StorageService
   ) {
     this.errorHandler = this.errorHandler.bind(this);
-    this.needsReload = new Subject<void>();
 
     if (!storageService.getItem(API_KEY)) {
       this.informerService.message = API_KEY_MISSING_MSG;
     }
-
-    storageService.storageChanged.subscribe((changedItem) => {
-      if (changedItem.key === API_KEY) {
-        this.informerService.message = '';
-        this.needsReload.next();
-      }
-    });
   }
 
   get url(): string {

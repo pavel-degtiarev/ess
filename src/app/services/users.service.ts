@@ -15,9 +15,7 @@ const userTemplate = {
 export class UsersService {
   users: IUser[] = [];
 
-  constructor(private api: ApiService) {
-    api.needsReload.subscribe(() => this.load());
-  }
+  constructor(private api: ApiService) { }
 
   // добавляем новую запись в список users.
   // поскольку список изменился, angular отрисует новую запись,
