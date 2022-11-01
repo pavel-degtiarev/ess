@@ -5,7 +5,7 @@ import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-userslist',
   templateUrl: './users-list.component.html',
-  styleUrls: ['./users-list.component.scss'],
+  styleUrls: ['./users-list.component.scss', '../../../styles/link.scss'],
 })
 export class UsersListComponent implements OnInit {
   constructor(

@@ -5,7 +5,7 @@ import { API_KEY, StorageService } from 'src/app/services/storage.service';
 @Component({
   selector: 'app-api-key-input',
   templateUrl: './api-key-input.component.html',
-  styleUrls: ['./api-key-input.component.scss'],
+  styleUrls: ['./api-key-input.component.scss', '../../../styles/link.scss'],
 })
 export class ApiKeyInputComponent implements OnInit {
   apiKeyField: string;
