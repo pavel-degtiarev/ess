@@ -4,8 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersListComponent } from 'src/app//components/users-list/users-list.component';
 import { ApiKeyInputComponent } from 'src/app/components/api-key-input/api-key-input.component';
 
-export const HOME = "";
-export const APIKEY = 'api-key';
+const HOME = "";
+const APIKEY = 'api-key';
+
+export const HOME_URL = `/${HOME}`;
+export const APIKEY_URL = `/${APIKEY}`;
 
 const routes: Routes = [
   { path: HOME, component: UsersListComponent },

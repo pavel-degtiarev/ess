@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
-import { APIKEY, HOME } from './modules/routing/routing.module';
+import { APIKEY_URL, HOME_URL } from './modules/routing/routing.module';
 
 interface ILink {
   title: string;
   url: string;
 }
-
-const HOME_URL = `/${HOME}`;
-const APIKEY_URL = `/${APIKEY}`;
 
 const links = {
   home: { title: 'Back to list', url: HOME_URL },
