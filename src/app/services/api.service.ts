@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, Subject, tap, throwError } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { IApi } from '../interfaces/api.interface';
 import { IUser } from '../interfaces/user.interface';
 import { InformerService } from './informer.service';
@@ -10,12 +10,9 @@ const URL = `https://crudcrud.com`;
 
 const LOADING_MSG = 'Loading...';
 const GENERAL_ERROR_MSG = 'Data access error. Try reload page.';
-const API_KEY_MISSING_MSG = 'API-Key is missing.';
 
 @Injectable()
 export class ApiService implements IApi {
-
-  // needsReload: Subject<void>;
 
   constructor(
     private http: HttpClient,
@@ -23,10 +20,6 @@ export class ApiService implements IApi {
     private storageService: StorageService
   ) {
     this.errorHandler = this.errorHandler.bind(this);
-
-    if (!storageService.getItem(API_KEY)) {
-      this.informerService.message = API_KEY_MISSING_MSG;
-    }
   }
 
   get url(): string {
@@ -34,10 +27,6 @@ export class ApiService implements IApi {
   }
 
   get(): Observable<IUser[]> {
-    if (this.informerService.message) {
-      return new Observable<IUser[]>((subscriber) => subscriber.next([]));
-    }
-
     this.informerService.message = LOADING_MSG;
     return this.http.get<IUser[]>(`${this.url}/user`).pipe(
       tap(() => (this.informerService.message = '')),
