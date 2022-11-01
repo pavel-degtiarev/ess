@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HOME_URL } from 'src/app/modules/routing/routing.module';
 import { LockService } from 'src/app/services/lock.service';
 import { API_KEY, StorageService } from 'src/app/services/storage.service';
 
@@ -12,6 +14,7 @@ export class ApiKeyInputComponent implements OnInit {
 
   constructor(
     private storageService: StorageService,
+    private router: Router,
     public lockService: LockService
   ) {}
 
@@ -21,5 +24,6 @@ export class ApiKeyInputComponent implements OnInit {
 
   saveNewApiKey() {
     this.storageService.setItem(API_KEY, this.apiKeyField);
+    this.router.navigate([HOME_URL]);
   }
 }
