@@ -1,8 +1,10 @@
+<nav>
+  <a class="link" routerLink="/api-key">Set API-Key</a>
+</nav>
+
 <app-informer *ngIf="informerService.message; else usersList"></app-informer>
 
 <ng-template #usersList>
-  <a class="link" routerLink="/api-key">Set API-Key</a>
-
   <ul class="users__list users-list">
     <li class="users-list__item users-list__header">
       <app-header></app-header>
