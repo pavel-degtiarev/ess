@@ -1,6 +1,6 @@
-import { NgModule, Provider } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
@@ -19,6 +19,7 @@ import { InformerComponent } from './components/informer/informer.component';
 import { InformerService } from './services/informer.service';
 import { ApiKeyInputComponent } from './components/api-key-input/api-key-input.component';
 import { StorageService } from './services/storage.service';
+import { RoutingModule } from './modules/routing/routing.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { StorageService } from './services/storage.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule
   ],
   providers: [
     LockService,

@@ -1,0 +1,6 @@
+@use "./variables.scss" as var;
+
+a {
+  display: block;
+  margin-bottom: var.$sizeNorm;
+}

@@ -1,8 +1,9 @@
-
-<div class="container api-key">
-  <app-api-key-input></app-api-key-input>
+<div class="container">
+  <nav>
+    <a class="link" [routerLink]="lockService.isLocked ? null : link.url">{{ link.title }}</a>
+  </nav>
 </div>
 
-<div class="container users">
-  <app-userslist></app-userslist>
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
