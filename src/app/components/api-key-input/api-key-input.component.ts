@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HOME_URL } from 'src/app/modules/routing/routing.module';
-import { LockService } from 'src/app/services/lock.service';
 import { API_KEY, StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -15,7 +14,6 @@ export class ApiKeyInputComponent implements OnInit {
   constructor(
     private storageService: StorageService,
     private router: Router,
-    public lockService: LockService
   ) {}
 
   ngOnInit(): void {
