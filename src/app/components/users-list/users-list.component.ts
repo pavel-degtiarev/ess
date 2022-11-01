@@ -14,6 +14,7 @@ export class UsersListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (!this.informerService.message) this.usersService.load();
+    this.informerService.message = '';
+    this.usersService.load();
   }
 }
